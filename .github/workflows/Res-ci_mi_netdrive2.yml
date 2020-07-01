@@ -150,6 +150,7 @@ jobs:
           CONFIG_PACKAGE_kmod-rtl8821ae=y
           CONFIG_PACKAGE_kmod-rtl8xxxu=y
           CONFIG_PACKAGE_kmod-mt7601u=y
+          CONFIG_PACKAGE_kmod-mt_wifi=y
           EOF
 
 
