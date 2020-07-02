@@ -10,11 +10,11 @@
 name: OpenWrt-Rpi4B
 
 on:
-  schedule:
-    - corn: 0 20 * * *
   push:
     branches: 
       - master
+  #schedule:
+    #- corn: 0 20 * * *
   # release:
   #   types: [published]
 
