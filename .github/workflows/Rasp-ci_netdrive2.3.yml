@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt-RaspberryPi_v1.0
+name: OpenWrt-RaspberryPi_v1.1
 
 on:
   schedule:
@@ -138,44 +138,12 @@ jobs:
           CONFIG_PACKAGE_kmod-usb3=y
           EOF
           
-          # 网卡驱动:
+          # 无线网卡驱动:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_kmod-rtl8180=y
-          CONFIG_PACKAGE_kmod-rtl8187=y
-          CONFIG_PACKAGE_kmod-rtl8192ce=y
-          CONFIG_PACKAGE_rtl8192ce-firmware=y
           CONFIG_PACKAGE_kmod-rtl8192cu=y
           CONFIG_PACKAGE_rtl8192cu-firmware=y
-          CONFIG_PACKAGE_kmod-rtl8192de=y
-          CONFIG_PACKAGE_rtl8192de-firmware=y
-          CONFIG_PACKAGE_kmod-rtl8192se=y
-          CONFIG_PACKAGE_rtl8192se-firmware=y
-          CONFIG_PACKAGE_kmod-rtl8812au-ct=y
-          CONFIG_PACKAGE_rtl8192au-firmware=y
-          CONFIG_PACKAGE_RTLWIFI_DEBUG=y
-          CONFIG_PACKAGE_kmod-rtl8xxxu=y
-          CONFIG_PACKAGE_kmod-rtlwifi=y
-          CONFIG_PACKAGE_kmod-rtlwifi-btcoexist=y
-          CONFIG_PACKAGE_kmod-rtlwifi-usb=y
-          CONFIG_PACKAGE_kmod-rtlwifi-pci=y
           CONFIG_PACKAGE_kmod-mt7601u=y
-          CONFIG_MTK_WIFI_MODE_AP=y
-          CONFIG_MTK_MT_AP_SUPPORT=y
-          CONFIG_MTK_WDS_SUPPORT=y
-          CONFIG_MTK_MBSS_SUPPORT=y
-          CONFIG_MTK_APCLI_SUPPORT=y
-          CONFIG_MTK_MUMIMO_SUPPORT=y
-          CONFIG_MTK_MU_RA_SUPPORT=y
-          CONFIG_MTK_MCAST_RATE_SPECIFIC=y
-          CONFIG_MTK_VOW_SUPPORT=y
-          CONFIG_MTK_BAND_STEERING=y
-          CONFIG_MTK_GREENAP_SUPPORT=y
-          CONFIG_MTK_WIFI_MT_MAC=y
-          CONFIG_MTK_MT_MAC=y
-          CONFIG_MTK_PCIE_ASPM_DYM_CTRL_SUPPORT=y
           CONFIG_PACKAGE_mt7601u-firmware=y
-          CONFIG_PACKAGE_kmod-mt_wifi=y
-          CONFIG_PACKAGE_wifi-l1profile=y
           EOF
 
 
@@ -209,7 +177,6 @@ jobs:
           CONFIG_PACKAGE_luci-app-unblockmusic=y
           CONFIG_UnblockNeteaseMusic_Go=y
           CONFIG_UnblockNeteaseMusic_NodeJS=y
-          CONFIG_PACKAGE_luci-app-zerotier=y
           EOF
 
           # LuCI主题:
