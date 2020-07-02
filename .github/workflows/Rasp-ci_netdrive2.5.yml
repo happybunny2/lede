@@ -7,14 +7,16 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt-RaspberryPi_v1.3
+name: OpenWrt-Rpi4B
 
 on:
   schedule:
-    - cron: 0 20 * * *
+    - corn: 0 20 * * *
   push:
     branches: 
       - master
+  # schedule:
+  #   - cron: 0 20 * * *
   # release:
   #   types: [published]
 
@@ -137,14 +139,13 @@ jobs:
           CONFIG_PACKAGE_kmod-usb2-pci=y
           CONFIG_PACKAGE_kmod-usb3=y
           EOF
-          
-          # 无线网卡驱动:
+
+          # USB网卡驱动:
           cat >> .config <<EOF
           CONFIG_PACKAGE_kmod-mt7601u=y
           CONFIG_PACKAGE_mt7601u-firmware=y
           EOF
-
-
+          
           # 常用LuCI插件选择:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-app-adbyby-plus=y    
@@ -172,6 +173,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-v2ray-server=y
           CONFIG_PACKAGE_luci-app-filetransfer=y
           CONFIG_PACKAGE_luci-app-firewall=y
+          CONFIG_PACKAGE_luci-app-zerotier=y
           CONFIG_PACKAGE_luci-app-unblockmusic=y
           CONFIG_UnblockNeteaseMusic_Go=y
           CONFIG_UnblockNeteaseMusic_NodeJS=y
@@ -181,7 +183,6 @@ jobs:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
           CONFIG_PACKAGE_luci-theme-netgear=y
-          CONFIG_PACKAGE_luci-theme-material=y
           EOF
 
           # 常用软件包:
