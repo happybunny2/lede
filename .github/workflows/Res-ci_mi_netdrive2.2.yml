@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt-CI
+name: OpenWrt-RaspberryPi_v1.0
 
 on:
   schedule:
@@ -143,13 +143,21 @@ jobs:
           CONFIG_PACKAGE_kmod-rtl8180=y
           CONFIG_PACKAGE_kmod-rtl8187=y
           CONFIG_PACKAGE_kmod-rtl8192ce=y
+          CONFIG_PACKAGE_rtl8192ce-firmware=y
           CONFIG_PACKAGE_kmod-rtl8192cu=y
+          CONFIG_PACKAGE_rtl8192cu-firmware=y
           CONFIG_PACKAGE_kmod-rtl8192de=y
+          CONFIG_PACKAGE_rtl8192de-firmware=y
           CONFIG_PACKAGE_kmod-rtl8192se=y
+          CONFIG_PACKAGE_rtl8192se-firmware=y
           CONFIG_PACKAGE_kmod-rtl8812au-ct=y
-          CONFIG_PACKAGE_kmod-rtl8821ae=y
+          CONFIG_PACKAGE_rtl8192au-firmware=y
           CONFIG_PACKAGE_kmod-rtl8xxxu=y
+          CONFIG_PACKAGE_kmod-rtlwifi=y
+          CONFIG_PACKAGE_kmod-rtlwifi-usb=y
+          CONFIG_PACKAGE_kmod-rtlwifi-pci=y
           CONFIG_PACKAGE_kmod-mt7601u=y
+          CONFIG_PACKAGE_mt7601u-firmware=y
           CONFIG_PACKAGE_kmod-mt_wifi=y
           EOF
 
@@ -184,6 +192,7 @@ jobs:
           CONFIG_PACKAGE_luci-app-unblockmusic=y
           CONFIG_UnblockNeteaseMusic_Go=y
           CONFIG_UnblockNeteaseMusic_NodeJS=y
+          CONFIG_PACKAGE_luci-app-zerotier=y
           EOF
 
           # LuCI主题:
