@@ -177,7 +177,6 @@ jobs:
           CONFIG_PACKAGE_luci-app-filetransfer=y
           CONFIG_PACKAGE_luci-app-firewall=y
           CONFIG_PACKAGE_luci-app-zerotier=y
-          CONFIG_PACKAGE_luci-app-unblockmusic=y
           EOF
 
           # LuCI主题:
