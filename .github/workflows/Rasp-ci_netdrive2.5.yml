@@ -140,7 +140,6 @@ jobs:
 
           # USB网卡驱动:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_kmod-mt7601u=y
           CONFIG_PACKAGE_mt7601u-firmware=y
           EOF
           
