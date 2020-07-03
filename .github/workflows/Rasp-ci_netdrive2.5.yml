@@ -138,11 +138,6 @@ jobs:
           CONFIG_PACKAGE_kmod-usb3=y
           EOF
 
-          # USB网卡驱动:
-          cat >> .config <<EOF
-          CONFIG_PACKAGE_mt7601u-firmware=y
-          EOF
-          
           # 常用LuCI插件选择:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-app-adbyby-plus=y    
