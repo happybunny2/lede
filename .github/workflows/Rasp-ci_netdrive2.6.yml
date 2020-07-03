@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: OpenWrt-Rpi4B
+name: OpenWrt-Rpi4B_v1.0
 
 on:
   push:
@@ -137,7 +137,16 @@ jobs:
           CONFIG_PACKAGE_kmod-usb2-pci=y
           CONFIG_PACKAGE_kmod-usb3=y
           EOF
-
+          
+          # USB网卡:
+          cat >> .config <<EOF
+          CONFIG_PACKAGE_rtl8192cu-firmware=y
+          CONFIG_PACKAGE_kmod-rtl8192cu=y
+          CONFIG_PACKAGE_mt7601u-firmware=y
+          CONFIG_PACKAGE_kmod-mt7601u=y
+          CONFIG_PACKAGE_kmod-mt_wifi=y
+          EOF
+          
           # 常用LuCI插件选择:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-app-adbyby-plus=y    
