@@ -125,17 +125,9 @@ jobs:
           
           # 网卡驱动:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_kmod-rtl8180=y
-          CONFIG_PACKAGE_kmod-rtl8187=y
-          CONFIG_PACKAGE_kmod-rtl8192ce=y
-          CONFIG_PACKAGE_kmod-rtl8192cu=y
-          CONFIG_PACKAGE_kmod-rtl8192de=y
-          CONFIG_PACKAGE_kmod-rtl8192se=y
-          CONFIG_PACKAGE_kmod-rtl8812au-ct=y
-          CONFIG_PACKAGE_kmod-rtl8821ae=y
-          CONFIG_PACKAGE_kmod-rtl8xxxu=y
+          CONFIG_PACKAGE_kmod-mt7601u=y
+          CONFIG_PACKAGE_mt7601u-firmware=y
           EOF
-          
           # 常用LuCI插件选择:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-app-adbyby-plus=y    
@@ -167,14 +159,12 @@ jobs:
           CONFIG_UnblockNeteaseMusic_Go=y
           CONFIG_UnblockNeteaseMusic_NodeJS=y
           EOF
-          
           # LuCI主题:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
           CONFIG_PACKAGE_luci-theme-netgear=y
           CONFIG_PACKAGE_luci-theme-material=y
           EOF
-          
           # 常用软件包:
           cat >> .config <<EOF
           CONFIG_PACKAGE_curl=y
@@ -185,7 +175,6 @@ jobs:
           CONFIG_PACKAGE_vim-fuller=y
           CONFIG_PACKAGE_wget=y
           EOF
-          
           # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
           # cat >> .config <<EOF
           # # CONFIG_TARGET_IMAGES_PAD is not set
